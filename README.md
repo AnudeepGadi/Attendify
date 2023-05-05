@@ -3,9 +3,11 @@ Attendify – Online Attendance System
 
 The project aims to eliminate manual paper-based attendance and use cloud to streamline the attendance process. 
 
-Team    :  The Solo Developer  
-Members :  Anudeep Gadi – 16342391
+Team    :  The Solo Developer <br /> 
+Members :  Anudeep Gadi (16342391)<br /> 
 Roles   :  Cloud Developer | Backend Developer | UI Developer | Database Developer
+
+**[Technical Details](TechnicalDetails.md)**
 
 ## Motivation
 <p align="justify">
