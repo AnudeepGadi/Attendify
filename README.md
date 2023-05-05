@@ -1,3 +1,4 @@
+CS 5525 Cloud Computing Project
 # Attendify
 Attendify – Online Attendance System 
 
