@@ -12,6 +12,7 @@ Roles   :  Cloud Developer | Backend Developer | UI Developer | Database Develop
 
 # Architecture Diagram
 **Attendify is completely developed on AWS (Amazon Web Services).**
+
 ![Architecture drawio](https://github.com/AnudeepGadi/Attendify/assets/111954019/d550599c-b745-4e17-b8d2-93bfa78d0e93)
 
 ## Motivation
