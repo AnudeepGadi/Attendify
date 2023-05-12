@@ -8,7 +8,7 @@ These web applications were developed using the latest **Angular 15**.
 
 **Attendify is completely developed on AWS (Amazon Web Services).**
 
-![CC_Project drawio (1)](https://user-images.githubusercontent.com/111954019/236363889-d8a3eab7-04b8-4863-b1e0-e21560a8389b.png)
+![Architecture drawio](https://github.com/AnudeepGadi/Attendify/assets/111954019/d550599c-b745-4e17-b8d2-93bfa78d0e93)
 
 <table>
     <thead>
