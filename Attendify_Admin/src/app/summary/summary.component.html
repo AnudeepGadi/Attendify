@@ -1,0 +1,83 @@
+<ul class="nav nav-pills text-center justify-content-center mb-2">
+  <li class="nav-item">
+    <a class="nav-link active" [class.active]="activeTab === 1" (click)="activeTab = 1">Attendance</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" [class.active]="activeTab === 2" (click)="activeTab = 2">Anamolies</a>
+  </li>
+</ul>
+
+<div class="tab-content">
+  <div id="tab1" class="tab-pane" [class.active]="activeTab === 1">
+    <div class="d-flex justify-content-end">
+      <div class="form-group" style="width: 15%;" class="ml-auto">
+        <input type="text" class="form-control" placeholder="Search by Username" [(ngModel)]="usernameFilter">
+      </div>
+    </div>
+    <table id="summary-table" class="table table-hover">
+      <thead class="text-center justify-content-center">
+        <tr>
+          <th scope="col">Rno</th>
+          <th scope="col">Name</th>
+          <th scope="col">Username</th>
+          <th scope="col">Marked At</th>
+          <th scope="col">IP Address</th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody class="text-center justify-content-center">
+        <tr *ngFor="let user of filterByUserName(usernameFilter) | paginate: { itemsPerPage: 10, currentPage: p }">
+
+          <td>{{ user.rno }}</td>
+          <td>{{ user.name }}</td>
+          <td>{{ user.username }}</td>
+          <td *ngIf="user.marked_at">{{ user.marked_at | date: 'MMM dd, EEE hh:mm a' : 'America/Chicago'}}</td>
+          <td *ngIf="!user.marked_at"><i class="bi bi-x-circle-fill text-danger"></i></td>
+          <td>{{user.ip_address}}</td>
+          <td *ngIf="user.marked_at">
+            <button type="button" (click)="deleteAttendance(user.id)" class="btn btn-outline-danger btn-sm">
+              <i class="bi bi-trash"></i>
+            </button>
+          </td>
+          <td *ngIf="!user.marked_at">
+            <button type="button" (click)="updateAttendance(user.username)" class="btn btn-outline-success btn-sm">
+              <i class="bi bi-check-circle-fill"></i>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="row mb-3 align-items-center">
+      <div class="col pagination mt-3 d-flex justify-content-between">
+        <pagination-controls (pageChange)="p = $event"></pagination-controls>
+      </div>
+      <div class="col text-end">
+        <button class="btn btn-outline-success" (click)="onDownload()">
+          <i class="bi bi-cloud-download"></i> Download Data
+        </button>
+      </div>
+    </div>
+
+  </div>
+  <div id="tab2" class="tab-pane" [class.active]="activeTab === 2">
+    <h3 *ngIf="anamoliesList.length === 0" class="text-center mt-4"> No Anamolies Detected </h3>
+    <table class="table w-auto">
+      <ng-container *ngFor="let item of anamoliesList; let i = index">
+        <ng-container *ngIf="i === 0 || item.IPAddress !== anamoliesList[i - 1].IPAddress">
+          <tr>
+            <th class="py-2">IP Address - {{ item.IPAddress }}</th>
+          </tr>
+        </ng-container>
+        <tbody class="text-center justify-content-center">
+          <tr>
+            <td>{{ item.Name }}</td>
+            <td>{{ item.MarkedBy }}</td>
+            <td>{{ item.MarkedAt | date: 'MMM dd, EEE hh:mm a' : 'America/Chicago' }}</td>
+          </tr>
+        </tbody>
+      </ng-container>
+    </table>
+  </div>
+
+
+</div>

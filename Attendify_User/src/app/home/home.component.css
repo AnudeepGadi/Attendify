@@ -1,0 +1,34 @@
+.title{
+font-family: Bruno Ace SC;
+}
+
+.otp-digit {
+  width: 3rem;
+  height: 3rem;
+  margin: 0 0.2rem; /* reduce the horizontal margin */
+  font-size: 2rem;
+  text-align: center;
+  border: 2px solid #000;
+  border-radius: 5px;
+}
+
+.otp-digit:focus {
+  outline: none; /* remove the default focus outline */
+  border-color: #1508ca; /* change the border color on focus */
+}
+
+.btn-primary:hover {
+  background-color: green;
+  color: black;
+}
+
+.custom-side-menu{
+  background-color: gainsboro !important;
+}
+
+
+
+.logo-customizable {
+  max-width: 100%;
+  height: auto;
+}

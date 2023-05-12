@@ -1,0 +1,23 @@
+<div class="d-flex justify-content-center align-items-center h-100 mt-5">
+    <div class="text-center">
+        <div class="d-flex align-items-center justify-content-center flex-column">
+            <button class="btn btn-primary mb-3" (click)="generateAccessCode()">Generate Access Code</button>
+            <div class="form-check form-switch" *ngIf="AccessCodeGenerated">
+                <input class="form-check-input" type="checkbox" id="on-off-switch" [(ngModel)]="isOn" (change)="onAccessCodeSwitchChange()">
+                <label class="form-check-label" for="on-off-switch">{{ isOn ? 'Access Code is Open' : 'Access Code is
+                    closed' }}</label>
+            </div>
+        </div>
+
+        <div class="d-flex justify-content-center align-items-center">
+            <div class="display-1 fw-bold text-danger mx-2">{{ otp[0] }}</div>
+            <div class="display-1 fw-bold text-danger mx-2">{{ otp[1] }}</div>
+            <div class="display-1 fw-bold text-danger mx-2">{{ otp[2] }}</div>
+            <div class="display-1 fw-bold text-danger mx-2">{{ otp[3] }}</div>
+            <div class="display-1 fw-bold text-danger mx-2">{{ otp[4] }}</div>
+            <div class="display-1 fw-bold text-danger mx-2">{{ otp[5] }}</div>
+            <div class="display-1 fw-bold text-danger mx-2">{{ otp[6] }}</div>
+            <div class="display-1 fw-bold text-danger mx-2">{{ otp[7] }}</div>
+        </div>
+    </div>
+</div>

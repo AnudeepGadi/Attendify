@@ -1,0 +1,58 @@
+<div class="container mt-2">
+    <div class="row">
+      <div class="col">
+        <label for="name">Name:</label>
+        <span class="fw-bold">{{ user.Name }}</span>
+      </div>
+      <div class="col">
+        <label for="username">Username:</label>
+        <span class="fw-bold">{{ user.Username }}</span>
+      </div>
+      <div class="col">
+        <label for="email">Email:</label>
+        <span class="fw-bold">{{ user.Email }}</span>
+      </div>
+    </div>
+  </div>
+
+
+<table *ngIf="attendanceList.length!==0" class="table table-striped mt-3" id="attendance-report">
+    <thead>
+        <tr class="text-center">
+            <th>Sr. No.</th>
+            <th>Attendance Taken At</th>
+            <th>Attendance Marked At</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody class="justify-content-center">
+        <tr *ngFor="let item of attendanceList | paginate: { itemsPerPage: 10, currentPage: p }; let i = index"
+            [attr.id]="'row-' + i" class="text-center">
+            <td>{{ i+1 }}</td>
+            <td>{{ item.attendance_taken_on | date: 'MMM dd, EEE hh:mm a' : 'America/Chicago' }}</td>
+            <td *ngIf="item.marked_at">{{ item.marked_at | date: 'MMM dd, EEE hh:mm a' : 'America/Chicago'}}
+            </td>
+            <td *ngIf="!item.marked_at"><i class="bi bi-x-circle-fill text-danger"></i></td>
+            <td *ngIf="item.marked_at">
+                <button type="button" (click)="deleteAttendance(item.id)" class="btn btn-outline-danger btn-sm">
+                  <i class="bi bi-trash"></i>
+                </button>
+              </td>
+              <td *ngIf="!item.marked_at">
+                <button type="button" (click)="updateAttendance(item.accesscode)" class="btn btn-outline-success btn-sm">
+                  <i class="bi bi-check-circle-fill"></i>
+                </button>
+              </td>
+        </tr>
+    </tbody>
+</table>
+<div *ngIf="attendanceList.length!==0" class="row mb-3 align-items-center">
+    <div class="col pagination mt-3 d-flex justify-content-between">
+      <pagination-controls (pageChange)="p = $event"></pagination-controls>
+    </div>
+    <div class="col text-end">
+      <button class="btn btn-outline-success" (click)="onDownload()">
+        <i class="bi bi-cloud-download"></i> Download Data
+      </button>
+    </div>
+  </div>
