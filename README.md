@@ -8,13 +8,13 @@ Team    :  The Solo Developer <br />
 Members :  Anudeep Gadi (16342391)<br /> 
 Roles   :  Cloud Developer | Backend Developer | UI Developer | Database Developer
 
+Attendify Admin Application: https://dev.d2e13q21xv7uwe.amplifyapp.com/
+Attendify User Application: https://dev.d2khdgwqlyo7bs.amplifyapp.com/
+
 **[Technical Details](TechnicalDetails.md)**
 
 # Architecture Diagram
 **Attendify is completely developed on AWS (Amazon Web Services).**
-
-### Attendify Admin Application: https://dev.d2e13q21xv7uwe.amplifyapp.com/
-### Attendify User Application: https://dev.d2khdgwqlyo7bs.amplifyapp.com/
 
 ![Architecture drawio](https://github.com/AnudeepGadi/Attendify/assets/111954019/d550599c-b745-4e17-b8d2-93bfa78d0e93)
 
