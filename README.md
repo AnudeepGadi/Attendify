@@ -8,9 +8,6 @@ Team    :  The Solo Developer <br />
 Members :  Anudeep Gadi (16342391)<br /> 
 Roles   :  Cloud Developer | Backend Developer | UI Developer | Database Developer
 
-Attendify Admin Application: https://dev.d2e13q21xv7uwe.amplifyapp.com/ <br>
-Attendify User Application: https://dev.d2khdgwqlyo7bs.amplifyapp.com/
-
 **[Technical Details](TechnicalDetails.md)**
 
 # Architecture Diagram
